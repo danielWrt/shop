@@ -11,5 +11,5 @@ class Product(models.Model):
     price = models.DecimalField(max_digits=10, decimal_places=2)
     quantity = models.IntegerField()
     description = models.TextField()
-    status = models.CharField(max_length=15, choices=[{'есть в наличии', 'in stock'}, ('нет в наличии', 'out of stock'), ('ожидается', 'pending')])
+    status = models.CharField(max_length=15, choices=[('есть в наличии', 'in stock'), ('нет в наличии', 'out of stock'), ('ожидается', 'pending')])
     
