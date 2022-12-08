@@ -16,3 +16,5 @@ class RegisterUserView(APIView):
         serializer.save()
     
         return Response('Successfully registration')
+
+    
