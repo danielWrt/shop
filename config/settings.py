@@ -48,6 +48,7 @@ INSTALLED_APPS = [
     # apps
     'account',
     'main',
+    'review',
 ]
 
 MIDDLEWARE = [
