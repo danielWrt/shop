@@ -16,5 +16,25 @@ class Product(models.Model):
     description = models.TextField()
     status = models.CharField(max_length=15, choices=[('есть в наличии', 'in stock'), ('нет в наличии', 'out of stock'), ('ожидается', 'pending')])
 
+
+    class Meta:
+        ordering = ['id']
+
+
     def __str__(self):
-        return f'[{self.category}] -> {self.title}'    
+        return f'[{self.category}] -> {self.title}'
+
+
+    @property
+    def average_rating(self):
+        ratings = self.ratings.all()
+        values = []
+        
+        for rating in ratings:
+            values.append(rating.value)
+        
+        if values:
+            return sum(values) / len(values)
+        
+        return 0
+        
