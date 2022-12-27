@@ -9,6 +9,7 @@ class CommentSerializer(ModelSerializer):
         model = Comment
         exclude = ('author',)
 
+
     def validate(self, attrs):
         attrs = super().validate(attrs)
         request = self.context.get("request") # получаем запрос из view
